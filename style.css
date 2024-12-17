@@ -69,7 +69,7 @@ h1 {
 #fixed-timer {
   position: fixed;
   top: 200px; /* Distance from the top */
-  right: 681px; /* Distance from the right */
+  right: 20px; /* Adjust right positioning to be more flexible */
   background-color: var(--primary-color);
   color: #fff;
   font-weight: 600;
@@ -78,11 +78,47 @@ h1 {
   border-radius: 10px;
   box-shadow: var(--box-shadow-light);
   z-index: 999; /* Ensures it stays above other content */
+  transition: right 0.3s ease, top 0.3s ease; /* Smooth transition for positioning changes */
+}
+
+/* Adjust timer for smaller screens (mobile-first) */
+@media (max-width: 600px) {
+  #fixed-timer {
+    right: 10px; /* Ensure it's not too far to the right on small screens */
+    top: 150px; /* Adjust distance from the top for better visibility on smaller screens */
+    font-size: 12px; /* Reduce font size for better fitting on smaller screens */
+    padding: 8px 15px; /* Adjust padding for smaller screens */
+  }
 }
 
 #fixed-timer span {
   font-weight: bold;
 }
+
+ /* Styling for the audio player container */
+    audio {
+      width: 100%; /* Make it responsive */
+      max-width: 300px; /* Set a maximum width */
+      height: 50px; /* Set the height */
+      margin: 20px auto; /* Center it vertically with some space */
+    
+      background-color: #f5f5f5; /* Light background for player */
+      border: 2px solid #ddd; /* Add a border */
+      border-radius: 8px; /* Rounded corners */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    /* Add hover effects */
+    audio:hover {
+      border-color: #bbb; /* Darker border on hover */
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    }
+
+    /* Responsive design for smaller devices */
+    @media (max-width: 600px) {
+      audio {
+        max-width: 90%; /* Make sure it fits smaller screens */
+      }
 
 /* Image Styling */
 .side-image {
