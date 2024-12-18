@@ -34,33 +34,35 @@ function calculateScore() {
     }
   }
 
-  // Calculate the percentage
-  const percentage = (score / 15) * 100;
+  // Calculate the points
+  const points = score; // Use the score directly as points
 
-  // Redirect based on the score
+  // Redirect based on the points
   let redirectUrl;
   let message;
-  if (percentage < 40) {
+  let instructionsMessage;
+
+  if (points >= 0 && points <= 3) {
     redirectUrl =
       "https://yazeeed-store.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A1 level
     message = "A1 مستواك";
-    instructionsMessage = `سيتم تحويلك الى كتاب الانجليزية للمبتدئين`;
-  } else if (percentage >= 40 && percentage < 60) {
+    instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمبتدئين";
+  } else if (points >= 4 && points <= 6) {
     redirectUrl =
       "https://yazeeed-store.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A2 level
     message = "A2 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمبتدئين";
-  } else if (percentage >= 60 && percentage < 70) {
+  } else if (points >= 7 && points <= 9) {
     redirectUrl =
       "https://yazeeed-store.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B1 level
     message = "B1 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمتوسطين";
-  } else if (percentage >= 70 && percentage < 85) {
+  } else if (points >= 10 && points <= 12) {
     redirectUrl =
       "https://yazeeed-store.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B2 level
     message = "B2 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمتوسطين";
-  } else {
+  } else if (points >= 13 && points <= 15) {
     redirectUrl = "https://yazeeed-store.com"; // C1 level
     message = "C1 مستواك";
   }
@@ -69,7 +71,9 @@ function calculateScore() {
   document.getElementById("result").textContent += ` ${message}`;
 
   // Display instructions message
-  document.getElementById("instructions").textContent = instructionsMessage;
+  document.getElementById(
+    "instructions-message"
+  ).textContent = instructionsMessage;
 
   // Redirect after 10 seconds
   setTimeout(function () {
@@ -79,7 +83,7 @@ function calculateScore() {
 
 // Timer
 document.addEventListener("DOMContentLoaded", function () {
-  let timeLeft = 10 * 60; // Starting time in seconds (5 minutes)
+  let timeLeft = 15 * 60; // Starting time in seconds (5 minutes)
   const timeDisplay = document.getElementById("time");
   const fixedTimer = document.getElementById("fixed-timer"); // Get fixed-timer element
 
