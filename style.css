@@ -43,12 +43,43 @@ h1 {
   position: relative;
   top: 15px;
 }
+  
+yy {
+  font-size: clamp(14px, 2vw, 17px); /* Flexible font size */
+  color: #001; /* Changed black color to #000 for proper syntax */
+  position: relative;
+  top: 0px; /* Default top position */
+}
+
+/* Adjust for small devices (mobile phones) */
+@media (max-width: 768px) {
+  yy {
+    font-size: clamp(12px, 3vw, 15px); /* Smaller font size for mobile */
+    top: -10px; /* Adjust position for mobile */
+  }
+}
+
+/* Adjust for medium devices (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  yy {
+    font-size: clamp(13px, 2.5vw, 16px); /* Adjust font size for tablets */
+    top: -12px; /* Slight adjustment for tablets */
+  }
+}
+
+/* Adjust for larger devices (desktops) */
+@media (min-width: 1200px) {
+  yy {
+    font-size: clamp(14px, 2vw, 17px); /* Larger font size for desktops */
+    top: -10px; /* Default position for large devices */
+  }
+}
 
 /* Subtext with Modern Button Style */
 .subtext {
   color: #fff;
   background-color: var(--primary-color);
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(12px, 2vw, 14px); /* Flexible font size */
   font-weight: 700;
   text-align: center;
   padding: 10px 16px;
@@ -59,6 +90,32 @@ h1 {
   transition: var(--transition);
   position: relative;
   top: 25px;
+}
+
+/* Adjust for small devices (mobile phones) */
+@media (max-width: 768px) {
+  .subtext {
+    font-size: clamp(10px, 3vw, 12px); /* Smaller font size for mobile */
+    top: 20px; /* Adjust positioning for small devices */
+    padding: 8px 14px; /* Slightly smaller padding for mobile */
+  }
+}
+
+/* Adjust for medium devices (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .subtext {
+    font-size: clamp(11px, 2.5vw, 13px); /* Adjust font size for tablets */
+    top: 22px; /* Adjust positioning for tablets */
+    padding: 9px 15px; /* Slightly adjusted padding */
+  }
+}
+
+/* Adjust for larger devices (desktops) */
+@media (min-width: 1200px) {
+  .subtext {
+    font-size: clamp(12px, 2vw, 14px); /* Larger font size for desktops */
+    top: 25px; /* Position remains as original for large devices */
+  }
 }
 
 .subtext:hover {
@@ -100,7 +157,10 @@ h1 {
       width: 100%; /* Make it responsive */
       max-width: 300px; /* Set a maximum width */
       height: 50px; /* Set the height */
-      margin: 20px auto; /* Center it vertically with some space */
+      margin: 20px auto;
+      position: relative;
+  top: -5.5px;/* Center it vertically with some space 
+      */
     
       background-color: #f5f5f5; /* Light background for player */
       border: 2px solid #ddd; /* Add a border */
@@ -158,6 +218,30 @@ percentage {
   transform: translateY(-3px);
 }
 
+/* Hover effect for the instructions message */
+#instructions-message:hover {
+  background-color: #e0f7fa; /* Lighter cyan background when hovered */
+  transform: scale(1.05); /* Slightly enlarge the message on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Responsive design for smaller devices */
+@media (max-width: 768px) {
+  #instructions-message {
+    font-size: 16px; /* Slightly smaller font size for mobile */
+    padding: 15px; /* Reduced padding for smaller screens */
+    max-width: 90%; /* Make the container take up more space on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  #instructions-message {
+    font-size: 14px; /* Further reduce font size for very small screens */
+    padding: 12px; /* Reduce padding even more */
+    max-width: 95%; /* Max width closer to full screen on very small screens */
+  }
+}
+
 .question p {
   color: var(--text-color);
   font-size: 18px;
@@ -203,17 +287,6 @@ button:hover,
 .submit-btn:hover {
   background-color: var(--secondary-color);
   transform: scale(1.2);
-}
-
-/* Instructions Styling */
-.instructions {
-  font-size: 17px;
-  color: #01579b;
-  text-align: center;
-  margin-top: 12px;
-  font-weight: 500;
-  position: relative;
-  top: -17px;
 }
 
 /* Responsive Design */
