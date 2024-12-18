@@ -41,22 +41,106 @@
         }
 
         h1 {
-          color: #002f47 .;
+          color: #002f47;
           font-size: 23px;
           text-align: center;
         }
 
+        /* Adjust styling for small devices (mobile phones) */
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 18px;
+            /* Smaller font size for mobile devices */
+          }
+        }
+
+        /* Adjust styling for medium devices (tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          h1 {
+            font-size: 20px;
+            /* Medium font size for tablets */
+          }
+        }
+
+        /* Adjust styling for large devices (desktops) */
+        @media (min-width: 1200px) {
+          h1 {
+            font-size: 25px;
+            /* Larger font size for desktops */
+          }
+        }
+
         .question {
-          background-color: #fffdff;
+          color: #A9A9A9 background-color: #fffdff;
           border-radius: 8px;
           padding: 15px;
           margin-bottom: 20px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Adjust styling for small devices (mobile phones) */
+        @media (max-width: 768px) {
+          .question {
+            padding: 10px;
+            /* Reduced padding on mobile devices */
+            margin-bottom: 15px;
+            /* Smaller margin */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Lighter shadow for mobile */
+          }
+        }
+
+        /* Adjust styling for medium to large devices (tablets, desktops) */
+        @media (min-width: 769px) {
+          .question {
+            padding: 15px;
+            /* Standard padding */
+            margin-bottom: 20px;
+            /* Standard margin */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Regular shadow */
+          }
+        }
+
+        /* Adjust styling for very large devices (large screens) */
+        @media (min-width: 1200px) {
+          .question {
+            padding: 20px;
+            /* Larger padding for large screens */
+            margin-bottom: 30px;
+            /* Larger margin for better spacing */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            /* Stronger shadow for large screens */
+          }
+        }
+
         .question p {
-          font-size: 18px;
+          font-size: 1.125rem;
+          /* Default font size based on root font size */
           color: #004364;
+          position: relative;
+          top: -10px;
+        }
+
+        @media (max-width: 768px) {
+          .question p {
+            font-size: 1rem;
+            /* Smaller font size for mobile devices */
+          }
+        }
+
+        @media (min-width: 769px) {
+          .question p {
+            font-size: 1.125rem;
+            /* Default font size for larger devices (tablets, desktops) */
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .question p {
+            font-size: 1.25rem;
+            /* Increase font size for very large screens */
+          }
         }
 
         input[type="radio"] {
@@ -65,13 +149,25 @@
 
         /* Button styling */
         button {
-          background-color: #01579b;
-          color: white;
-          padding: 12px 25px;
+          background-color: var(--primary-color);
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 12px 20px;
           border: none;
+          border-radius: 8px;
           cursor: pointer;
-          font-size: 18px;
-          border-radius: 5px;
+          display: block;
+          margin: 20px auto 0;
+          transition: var(--transition);
+          position: relative;
+          top: -39px;
+        }
+
+        button:hover,
+        .submit-btn:hover {
+          background-color: var(--secondary-color);
+          transform: scale(1.2);
         }
 
         /* Result styling */
@@ -82,7 +178,15 @@
           color: #01579b;
           text-align: center;
           position: relative;
-          top: -13px;
+          top: -60.5px;
+        }
+
+        .instructions-message {
+          font-size: 18px;
+          color: #01579D;
+          text-align: center;
+          position: relative;
+          top: -57.5px;
         }
 
         button:hover {
@@ -93,10 +197,10 @@
         .quiz-container {
           max-width: 900px;
           margin: 0 auto;
-          padding: 20px;
+          padding: 70px;
           background-color: #ffffff;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          border-radius: 8px;
+          border-radius: 10px;
           position: relative;
           top: 50px;
         }
@@ -111,217 +215,186 @@
 
       <div class="quiz-container">
         <form id="cefr-test">
-          <!-- Question 1 -->
+          <!-- Question 1 - A1 -->
           <div class="question">
-            <p>1. I ________ English every day.</p>
-            <input type="radio" name="q1" value="0"> speaking<br>
-            <input type="radio" name="q1" value="0"> speaks<br>
-            <input type="radio" name="q1" value="1"> speak<br>
-            <input type="radio" name="q1" value="0"> spoken<br>
+            <p>Choose the correct sentence:</p>
+            <input type="radio" name="q1" value="0">She like pizza<br>
+            <input type="radio" name="q1" value="1">She likes pizza<br>
+            <input type="radio" name="q1" value="0">She liking pizza<br>
+            <input type="radio" name="q1" value="0">She liked pizza<br>
           </div>
 
-          <!-- Question 2 -->
+          <!-- Question 2 - A2 -->
           <div class="question">
-            <p>2. She _____ to the market last week.</p>
-            <input type="radio" name="q2" value="0"> gone<br>
-            <input type="radio" name="q2" value="0"> goes<br>
-            <input type="radio" name="q2" value="1"> went<br>
-            <input type="radio" name="q2" value="0"> going<br>
+            <p>Where is the book?</p>
+            <input type="radio" name="q2" value="0">It’s under the wall<br>
+            <input type="radio" name="q2" value="0">It’s between on the floor<br>
+            <input type="radio" name="q2" value="1">It’s beside to the chair<br>
+            <input type="radio" name="q2" value="0">It’s on the table<br>
           </div>
 
-          <!-- Question 3 -->
+          <!-- Question 3 - B1 -->
           <div class="question">
-            <p>3. I __________ my homework when you called me.</p>
-            <input type="radio" name="q3" value="1"> was doing<br>
-            <input type="radio" name="q3" value="0"> am doing<br>
-            <input type="radio" name="q3" value="0"> did<br>
-            <input type="radio" name="q3" value="0"> do<br>
+            <p>Choose the correct sentence:</p>
+            <input type="radio" name="q3" value="1">The man who is wearing a blue hat is my uncle<br>
+            <input type="radio" name="q3" value="0">The man which is wearing a blue hat is my uncle<br>
+            <input type="radio" name="q3" value="0">The man whom is wearing a blue hat is my uncle<br>
+            <input type="radio" name="q3" value="0">The man whose is wearing a blue hat is my uncle<br>
           </div>
 
-          <!-- Question 4 -->
+          <!-- Question 4 - C1 -->
           <div class="question">
-            <p>4. They __________ for the test since last week.</p>
-            <input type="radio" name="q4" value="1"> have been studying<br>
-            <input type="radio" name="q4" value="0"> studied<br>
-            <input type="radio" name="q4" value="0"> were studying<br>
-            <input type="radio" name="q4" value="0"> have studied<br>
+            <p>Choose the sentence with correct parallel structure:</p>
+            <input type="radio" name="q4" value="0">She enjoys reading, to cook, and hiking.<br>
+            <input type="radio" name="q4" value="1">She enjoys reading, cooking, and hiking.<br>
+            <input type="radio" name="q4" value="0">She enjoys reading, cooking, and to hike.<br>
+            <input type="radio" name="q4" value="0">She enjoys to read, cooking, and hiking.<br>
           </div>
 
-          <!-- Question 5 -->
+          <!-- Question 5 - A1 -->
           <div class="question">
-            <p>5. If I __________ more money, I would travel around the world.</p>
-            <input type="radio" name="q5" value="1"> had<br>
-            <input type="radio" name="q5" value="0"> have<br>
-            <input type="radio" name="q5" value="0"> will have<br>
-            <input type="radio" name="q5" value="0"> would have<br>
+            <p>Read the text and answer:</p>
+            <yy>“Tom has a dog. His dog’s name is Max. Max likes to play in the park.”</yy>
+            <p>What does Max like to do?</p>
+            <input type="radio" name="q5" value="0">Eat food<br>
+            <input type="radio" name="q5" value="1">Play in the park<br>
+            <input type="radio" name="q5" value="0">Sleep at home<br>
+            <input type="radio" name="q5" value="0">Walk to school<br>
           </div>
 
-          <!-- Question 6 -->
+          <!-- Question 6 - A2 -->
           <div class="question">
-            <p>6. I _______ to visit Paris someday.</p>
-            <input type="radio" name="q6" value="1"> want<br>
-            <input type="radio" name="q6" value="0"> wanted<br>
-            <input type="radio" name="q6" value="0"> wanting<br>
-            <input type="radio" name="q6" value="0"> wants<br>
+            <p>Read the text and answer:</p>
+            <yy>“Sarah goes to the library every weekend because she loves reading. She usually borrows three books.”</yy>
+            <p>Why does Sarah go to the library?</p>
+            <input type="radio" name="q6" value="0">To meet friends<br>
+            <input type="radio" name="q6" value="1">To borrow books<br>
+            <input type="radio" name="q6" value="0">To work<br>
+            <input type="radio" name="q6" value="0">To use the computer<br>
           </div>
 
-          <!-- Question 7 -->
+          <!-- Question 7 - B1 -->
           <div class="question">
-            <p>7. The meeting ________ at 9:00 tomorrow morning.</p>
-            <input type="radio" name="q7" value="1"> will start<br>
-            <input type="radio" name="q7" value="0"> starts<br>
-            <input type="radio" name="q7" value="0"> started<br>
-            <input type="radio" name="q7" value="0"> starting<br>
+            <p>Read the text and answer:</p>
+            <yy>“James loves traveling. He has visited over 30 countries and enjoys meeting new people. He also writes a blog about his experiences.”</yy>
+            <p>What does James write about?</p>
+            <input type="radio" name="q7" value="0">His favorite food<br>
+            <input type="radio" name="q7" value="1">His travel experiences<br>
+            <input type="radio" name="q7" value="0">His job<br>
+            <input type="radio" name="q7" value="0">His friends<br>
           </div>
 
-          <!-- Question 8 -->
+          <!-- Question 8 - C1 -->
           <div class="question">
-            <p>8. She is the person ________ can help you.</p>
-            <input type="radio" name="q8" value="1"> who<br>
-            <input type="radio" name="q8" value="0"> whose<br>
-            <input type="radio" name="q8" value="0"> whom<br>
-            <input type="radio" name="q8" value="0"> that<br>
+            <p>Read the text and answer:</p>
+            <yy>“The artist’s work was both innovative and controversial. Critics praised her unique style, while others questioned its appeal to the general audience.”</yy>
+            <p>What can be inferred about the artist’s work?</p>
+            <input type="radio" name="q8" value="0">Everyone loved her art.<br>
+            <input type="radio" name="q8" value="0">Her art was very traditional.<br>
+            <input type="radio" name="q8" value="1">Her art divided opinions.<br>
+            <input type="radio" name="q8" value="0">Her art was ignored by critics.<br>
           </div>
 
-          <!-- Question 9 -->
+          <!-- Question 9 - A1 -->
           <div class="question">
-            <p>9. By next year, they __________ finished the project.</p>
-            <input type="radio" name="q9" value="1"> will have<br>
-            <input type="radio" name="q9" value="0"> have<br>
-            <input type="radio" name="q9" value="0"> had<br>
-            <input type="radio" name="q9" value="0"> will<br>
-          </div>
+            <p>Listen and choose the correct answer:</p>
 
-          <!-- Question 10 -->
-          <div class="question">
-            <p>10. She didn't know __________ to do.</p>
-            <input type="radio" name="q10" value="1"> what<br>
-            <input type="radio" name="q10" value="0"> which<br>
-            <input type="radio" name="q10" value="0"> how<br>
-            <input type="radio" name="q10" value="0"> why<br>
-          </div>
-
-          <!-- Question 11 -->
-          <div class="question">
-            <p>11. By the time we arrive, they ________ already left.</p>
-            <input type="radio" name="q11" value="1"> will have<br>
-            <input type="radio" name="q11" value="0"> have<br>
-            <input type="radio" name="q11" value="0"> had<br>
-            <input type="radio" name="q11" value="0"> will<br>
-          </div>
-
-          <!-- Question 12 -->
-          <div class="question">
-            <p>12. The students __________ a lot of homework last night.</p>
-            <input type="radio" name="q12" value="1"> had<br>
-            <input type="radio" name="q12" value="0"> have<br>
-            <input type="radio" name="q12" value="0"> will have<br>
-            <input type="radio" name="q12" value="0"> having<br>
-          </div>
-
-          <!-- Question 13 -->
-          <div class="question">
-            <p>13. He is the most talented person I __________ met.</p>
-            <input type="radio" name="q13" value="1"> have ever<br>
-            <input type="radio" name="q13" value="0"> had ever<br>
-            <input type="radio" name="q13" value="0"> ever<br>
-            <input type="radio" name="q13" value="0"> never<br>
-          </div>
-
-          <!-- Question 14 -->
-          <div class="question">
-            <p>14. I wish I __________ that answer on the exam.</p>
-            <input type="radio" name="q14" value="1"> knew<br>
-            <input type="radio" name="q14" value="0"> know<br>
-            <input type="radio" name="q14" value="0"> knowing<br>
-            <input type="radio" name="q14" value="0"> known<br>
-          </div>
-
-          <!-- Question 15 -->
-          <div class="question">
-            <p>Listen to the audio and choose the correct answer:</p>
-
-            <!-- Audio Player -->
             <audio controls>
-              <source src="https://audio.jukehost.co.uk/kwhqTRrBSApoPCkmqYNYf92MrBD97tJK" type="audio/mp3">
+              <source src="https://audio.jukehost.co.uk/iKcoK9ZXQE5BWN1EzRdbGHNQrxEg2oPA" type="audio/mp3">
               Your browser does not support the audio element.
             </audio>
 
-            <p>
-            <p>What does the passage emphasize about technology?</p>
-            </p>
-            <input type="radio" name="q15" value="0">Tech is all we need.<br>
-            <input type="radio" name="q15" value="0">Phones ensure success.<br>
-            <input type="radio" name="q15" value="1">Tech improves efficiency.<br>
-            <input type="radio" name="q15" value="0">Life runs on tech.<br>
+            <p>Where is James originally from?</p>
+            <input type="radio" name="q9" value="0">United States<br>
+            <input type="radio" name="q9" value="0">United Kingdom<br>
+            <input type="radio" name="q9" value="1">Australia<br>
+            <input type="radio" name="q9" value="0">Canada<br>
           </div>
 
-          <button type="button" onclick="calculateScore()" class="submit-btn">Submit</button>
+          <!-- Question 10 - A2 -->
+          <div class="question">
+            <p>Listen and choose the correct answer:</p>
 
-          <div class="result" id="result"></div>
-          <div class="instructions" id="instructions"></div>
+            <audio controls>
+              <source src="https://audio.jukehost.co.uk/7WI5lZJNFu2AdeDz7D3SW6vfo0FJPTcn" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
 
-          <script>
-            function calculateScore() {
-              const form = document.getElementById('cefr-test');
-              const answers = new FormData(form);
-              let score = 0;
-              // Scoring based on the answers
-              const pointValues = {
-                q1: 1,
-                q2: 1,
-                q3: 1,
-                q4: 1,
-                q5: 1,
-                q6: 1,
-                q7: 1,
-                q8: 1,
-                q9: 1,
-                q10: 1,
-                q11: 1,
-                q12: 1,
-                q13: 1,
-                q14: 1,
-                q15: 1
-              };
-              for (let [question, value] of answers.entries()) {
-                if (value == "1") {
-                  score += pointValues[question];
-                }
-              }
-              const percentage = (score / 15) * 100;
-              document.getElementById('result').textContent = Your score: $ {
-                score
-              }
-              /15 (${percentage.toFixed(2)}%);
-              // Display the redirect message and redirect after 3 seconds
-              let redirectUrl;
-              let message;
-              if (percentage < 40) {
-                redirectUrl = 'https://yazeeed-store.com'; // A1 level
-                message = 'A1 مستواك';
-                instructionsMessage = 'اضغط هنا لعرض الكتاب المناسب لك';
-              } else if (percentage >= 40 && percentage < 60) {
-                redirectUrl = 'https://yazeeed-store.com/PdbZbZB'; // A2 level
-                message = 'A2 مستواك';
-              } else if (percentage >= 60 && percentage < 70) {
-                redirectUrl = 'https://yazeeed-store.com/PdbZbZB'; // B1 level
-                message = 'B1 مستواك';
-              } else if (percentage >= 70 && percentage < 85) {
-                redirectUrl = 'https://yazeeed-store.com/PdbZbZB'; // B2 level
-                message = 'B2 مستواك';
-              } else {
-                redirectUrl = 'https://yazeeed-store.com/PdbZbZB'; // C1 level
-                message = 'C1-C2 مستواك';
-              }
-              // Display the message
-              document.getElementById('redirectMessage').textContent = message;
-              // Redirect after 10 seconds
-              setTimeout(function() {
-                window.location.href = redirectUrl;
-              }, 100000);
-            }
-          </script>
+            <p>How often does he go running?</p>
+            <input type="radio" name="q10" value="0">Every day<br>
+            <input type="radio" name="q10" value="1">Three times a week<br>
+            <input type="radio" name="q10" value="0">Once a week<br>
+            <input type="radio" name="q10" value="0">Only on weekends<br>
+          </div>
+
+          <!-- Question 11 - B1 -->
+          <div class="question">
+            <p>Listen and choose the correct answer:</p>
+
+            <audio controls>
+              <source src="https://audio.jukehost.co.uk/864jpbQWk0lMKqsQs6hBTp6FxilGf9xV" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+
+            <p>Where does Mark work now?</p>
+            <input type="radio" name="q11" value="0">In a café<br>
+            <input type="radio" name="q11" value="0">In a small restaurant<br>
+            <input type="radio" name="q11" value="1">In a hotel<br>
+            <input type="radio" name="q11" value="0">In a bakery<br>
+          </div>
+
+          <!-- Question 12 - C1 -->
+          <div class="question">
+            <p>Listen and choose the correct answer:</p>
+
+            <audio controls>
+              <source src="https://audio.jukehost.co.uk/3luOyeT6nlIvlDuQszmx8SG7NfZETInW" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+
+            <p>What is the main issue discussed in the passage?</p>
+            <input type="radio" name="q12" value="1">The challenges of online learning and the need for social interaction<br>
+            <input type="radio" name="q12" value="0">The benefits of online learning for accessibility<br>
+            <input type="radio" name="q12" value="0">The role of technology in enhancing traditional classrooms<br>
+            <input type="radio" name="q12" value="0">The advantages of studying at home<br>
+          </div>
+
+          <!-- Question 13 - A1 -->
+          <div class="question">
+            <p>Choose the correct word for this sentence:</p>
+            <p>"I need a ______ to write."</p>
+            <input type="radio" name="q13" value="1">pen<br>
+            <input type="radio" name="q13" value="0">book<br>
+            <input type="radio" name="q13" value="0">chair<br>
+            <input type="radio" name="q13" value="0">phone<br>
+          </div>
+
+          <!-- Question 14 - B1 -->
+          <div class="question">
+            <p>Which word means the same as ‘happy’?</p>
+            <input type="radio" name="q14" value="0">Angry<br>
+            <input type="radio" name="q14" value="1">Joyful<br>
+            <input type="radio" name="q14" value="0">Tired<br>
+            <input type="radio" name="q14" value="0">Dizzy<br>
+          </div>
+
+          <!-- Question 15 - C1 -->
+          <div class="question">
+            <p>Choose the best word to complete the sentence:</p>
+            <p>"The scientist’s theory was highly ______, gaining both admiration and criticism from her peers."</p>
+            <input type="radio" name="q15" value="0">conventional<br>
+            <input type="radio" name="q15" value="1">innovative<br>
+            <input type="radio" name="q15" value="0">trivial<br>
+            <input type="radio" name="q15" value="0">predictable<br>
+          </div>
+        </form>
+      </div>
+
+      <button type="button" onclick="calculateScore()" class="submit-btn">Submit</button>
+
+      <div class="result" id="result"></div>
+      <div class="instructions-message" id="instructions-message"></div>
+
     </body>
 
   </html>
