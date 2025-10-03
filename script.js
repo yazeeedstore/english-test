@@ -44,26 +44,26 @@ function calculateScore() {
 
   if (points >= 0 && points <= 3) {
     redirectUrl =
-      "https://yazeeed-store.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A1 level
+      "https://yazeedenglish.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A1 level
     message = "A1 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمبتدئين";
   } else if (points >= 4 && points <= 6) {
     redirectUrl =
-      "https://yazeeed-store.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A2 level
+      "https://yazeedenglish.com/PdbZbZB/?utm_source=aff&utm_campaign=UbeUI"; // A2 level
     message = "A2 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمبتدئين";
   } else if (points >= 7 && points <= 9) {
     redirectUrl =
-      "https://yazeeed-store.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B1 level
+      "https://yazeedenglish.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B1 level
     message = "B1 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمتوسطين";
   } else if (points >= 10 && points <= 12) {
     redirectUrl =
-      "https://yazeeed-store.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B2 level
+      "https://yazeedenglish.com/vXbgBrO/?utm_source=aff&utm_campaign=UbeUI"; // B2 level
     message = "B2 مستواك";
     instructionsMessage = "سيتم تحويلك الى كتاب الانجليزية للمتوسطين";
   } else if (points >= 13 && points <= 15) {
-    redirectUrl = "https://yazeeed-store.com"; // C1 level
+    redirectUrl = "https://yazeedenglish.com"; // C1 level
     message = "C1 مستواك";
   }
 
